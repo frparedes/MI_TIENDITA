@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../data/productos.dart';
+import '../modelos/producto.dart';
+import '../servicios/favoritos_service.dart';
 
 class Favoritos extends StatefulWidget {
   const Favoritos({super.key});
@@ -9,15 +11,42 @@ class Favoritos extends StatefulWidget {
 }
 
 class _FavoritosState extends State<Favoritos> {
-  void eliminarFavorito(int index) {
+  @override
+  void initState() {
+    super.initState();
+    cargarFavoritos();
+  }
+
+  // Cargar favoritos guardados en el dispositivo
+  Future<void> cargarFavoritos() async {
+    final idsFavoritos = await FavoritosService.obtenerFavoritos();
+
+    if (!mounted) return;
+
     setState(() {
-      productos[index].favorito = false;
+      for (final producto in productos) {
+        producto.favorito = idsFavoritos.contains(producto.id);
+      }
+    });
+  }
+
+  // Eliminar favorito
+  Future<void> eliminarFavorito(Producto producto) async {
+    setState(() {
+      producto.favorito = false;
     });
 
+    final idsFavoritos = productos
+        .where((producto) => producto.favorito)
+        .map((producto) => producto.id)
+        .toList();
+
+    await FavoritosService.guardarFavoritos(idsFavoritos);
+
+    if (!mounted) return;
+
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('${productos[index].nombre} eliminado de favoritos'),
-      ),
+      SnackBar(content: Text('${producto.nombre} eliminado de favoritos')),
     );
   }
 
@@ -47,8 +76,6 @@ class _FavoritosState extends State<Favoritos> {
               itemBuilder: (context, index) {
                 final producto = favoritos[index];
 
-                final indiceProducto = productos.indexOf(producto);
-
                 return Card(
                   margin: const EdgeInsets.only(bottom: 12),
                   child: ListTile(
@@ -76,7 +103,7 @@ class _FavoritosState extends State<Favoritos> {
                     subtitle: Text('\$${producto.precio.toStringAsFixed(2)}'),
                     trailing: IconButton(
                       onPressed: () {
-                        eliminarFavorito(indiceProducto);
+                        eliminarFavorito(producto);
                       },
                       icon: const Icon(Icons.favorite),
                     ),
