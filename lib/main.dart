@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pantallas/inicio.dart';
 
 void main() {
   runApp(const MiTienditaApp());
@@ -12,15 +13,8 @@ class MiTienditaApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mi Tiendita',
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Mi Tiendita')),
-        body: const Center(
-          child: Text(
-            'Bienvenido a Mi Tiendita',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
-      ),
+      theme: ThemeData(useMaterial3: true),
+      home: const Inicio(),
     );
   }
 }

@@ -7,6 +7,8 @@ void main() {
   ) async {
     await tester.pumpWidget(const MiTienditaApp());
 
-    expect(find.text('Bienvenido a Mi Tiendita'), findsOneWidget);
+    expect(find.text('Mi Tiendita'), findsNWidgets(2));
+    expect(find.text('Productos que te encantan'), findsOneWidget);
+    expect(find.text('Ver catálogo'), findsOneWidget);
   });
 }
