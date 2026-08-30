@@ -7,29 +7,42 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Mi Tiendita'), centerTitle: true),
+      appBar: AppBar(title: const Text('Mi Tiendita')),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircleAvatar(
-                radius: 60,
-                child: Icon(Icons.shopping_bag, size: 60),
+              CircleAvatar(
+                radius: 65,
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  Icons.shopping_bag,
+                  size: 65,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
+
               const SizedBox(height: 24),
-              const Text(
+
+              Text(
                 'Mi Tiendita',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+
               const SizedBox(height: 12),
-              const Text(
+
+              Text(
                 'Productos que te encantan',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
+
               const SizedBox(height: 32),
+
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.push(
