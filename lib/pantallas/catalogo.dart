@@ -1,8 +1,32 @@
 import 'package:flutter/material.dart';
 import '../data/productos.dart';
 
-class Catalogo extends StatelessWidget {
+class Catalogo extends StatefulWidget {
   const Catalogo({super.key});
+
+  @override
+  State<Catalogo> createState() => _CatalogoState();
+}
+
+class _CatalogoState extends State<Catalogo> {
+  void cambiarFavorito(int index) {
+    setState(() {
+      productos[index].favorito = !productos[index].favorito;
+    });
+
+    final producto = productos[index];
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          producto.favorito
+              ? '${producto.nombre} agregado a favoritos'
+              : '${producto.nombre} eliminado de favoritos',
+        ),
+        duration: const Duration(seconds: 2),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +85,14 @@ class Catalogo extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.favorite_border),
+                          onPressed: () {
+                            cambiarFavorito(index);
+                          },
+                          icon: Icon(
+                            producto.favorito
+                                ? Icons.favorite
+                                : Icons.favorite_border,
+                          ),
                         ),
                       ],
                     ),
