@@ -14,13 +14,12 @@ class Inicio extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
-                radius: 65,
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-                child: Icon(
-                  Icons.shopping_bag,
-                  size: 65,
-                  color: Theme.of(context).colorScheme.primary,
+              ClipOval(
+                child: Image.asset(
+                  'assets/imagenes/logo.png',
+                  width: 220,
+                  height: 220,
+                  fit: BoxFit.contain,
                 ),
               ),
 
