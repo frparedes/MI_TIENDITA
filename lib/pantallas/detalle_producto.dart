@@ -31,8 +31,11 @@ class _DetalleProductoState extends State<DetalleProducto> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          '${widget.producto.nombre} agregado al carrito. Cantidad: $cantidad',
+          '${widget.producto.nombre} agregado al carrito. '
+          'Cantidad: $cantidad',
         ),
+        duration: const Duration(seconds: 2),
+        action: SnackBarAction(label: 'OK', onPressed: () {}),
       ),
     );
   }
@@ -42,7 +45,10 @@ class _DetalleProductoState extends State<DetalleProducto> {
     final producto = widget.producto;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Detalle del producto')),
+      appBar: AppBar(
+        title: const Text('Detalle del producto'),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -114,15 +120,27 @@ class _DetalleProductoState extends State<DetalleProducto> {
               Row(
                 children: [
                   IconButton(
-                    onPressed: disminuirCantidad,
+                    onPressed: cantidad > 1 ? disminuirCantidad : null,
                     icon: const Icon(Icons.remove),
                   ),
 
-                  Text(
-                    '$cantidad',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.outline,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      '$cantidad',
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
 
