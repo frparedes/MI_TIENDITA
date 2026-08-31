@@ -6,11 +6,7 @@ Mi Tiendita es una aplicación de catálogo de productos que permite visualizar 
 
 ---
 
-# Actividad Integradora 2
-
 ## Descripción de la aplicación
-
-En esta actividad se continuó mejorando la aplicación desarrollada en la Actividad Integradora 1.
 
 La aplicación Mi Tiendita fue ampliada incorporando navegación entre diferentes pantallas, nuevos widgets de Flutter, manejo de estado mediante `setState()`, persistencia de información utilizando `shared_preferences` y personalización de la interfaz.
 
