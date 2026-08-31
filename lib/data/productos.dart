@@ -3,30 +3,80 @@ import '../modelos/producto.dart';
 final List<Producto> productos = [
   Producto(
     id: 1,
-    nombre: 'Camiseta básica',
-    descripcion: 'Camiseta cómoda de algodón para uso diario.',
-    precio: 19.99,
-    imagen: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab',
+    nombre: 'Hueso Mordedor',
+    precio: 8.99,
+    descripcion:
+        'Hueso resistente ideal para perros. Ayuda a mantenerlos entretenidos y favorece la limpieza de sus dientes.',
+    imagen:
+        'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=600',
+    favorito: false,
   ),
   Producto(
     id: 2,
-    nombre: 'Zapatillas deportivas',
-    descripcion: 'Zapatillas cómodas para actividades deportivas.',
-    precio: 49.99,
-    imagen: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff',
+    nombre: 'Pelota para Perro',
+    precio: 6.99,
+    descripcion:
+        'Pelota ideal para juegos y actividades al aire libre. Perfecta para mantener activa a tu mascota.',
+    imagen:
+        'https://images.unsplash.com/photo-1534361960057-19889db9621e?w=600',
+    favorito: false,
   ),
   Producto(
     id: 3,
-    nombre: 'Mochila',
-    descripcion: 'Mochila práctica para trabajo, estudio o viajes.',
-    precio: 34.99,
-    imagen: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62',
+    nombre: 'Cama para Mascota',
+    precio: 29.99,
+    descripcion:
+        'Cama cómoda y acolchada para que tu mascota tenga un espacio agradable para descansar.',
+    imagen:
+        'https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?w=600',
+    favorito: false,
   ),
   Producto(
     id: 4,
-    nombre: 'Reloj',
-    descripcion: 'Reloj moderno para complementar tu estilo.',
-    precio: 59.99,
-    imagen: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d',
+    nombre: 'Plato para Mascotas',
+    precio: 7.50,
+    descripcion:
+        'Plato práctico para servir alimento o agua. Fácil de limpiar y adecuado para perros y gatos.',
+    imagen:
+        'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600',
+    favorito: false,
+  ),
+  Producto(
+    id: 5,
+    nombre: 'Rascador para Gatos',
+    precio: 24.99,
+    descripcion:
+        'Rascador para gatos que ayuda a mantener sus uñas saludables y proporciona entretenimiento.',
+    imagen:
+        'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600',
+    favorito: false,
+  ),
+  Producto(
+    id: 6,
+    nombre: 'Juguete para Gatos',
+    precio: 9.99,
+    descripcion:
+        'Juguete interactivo diseñado para estimular la actividad y curiosidad de los gatos.',
+    imagen: 'https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600',
+    favorito: false,
+  ),
+  Producto(
+    id: 7,
+    nombre: 'Collar Ajustable',
+    precio: 11.99,
+    descripcion:
+        'Collar ajustable y cómodo para perros. Ideal para paseos diarios.',
+    imagen: 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=600',
+    favorito: false,
+  ),
+  Producto(
+    id: 8,
+    nombre: 'Juguete Mordedor',
+    precio: 12.50,
+    descripcion:
+        'Juguete resistente para perros, ideal para juegos y entretenimiento diario.',
+    imagen:
+        'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600',
+    favorito: false,
   ),
 ];
