@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../data/productos.dart';
-import '../servicios/favoritos_service.dart';
+import '../widgets/boton_favorito.dart';
 import 'detalle_producto.dart';
 import 'favoritos.dart';
 import '../modelos/producto.dart';
@@ -23,52 +24,6 @@ class _CatalogoState extends State<Catalogo> {
     'Accesorios',
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    cargarFavoritos();
-  }
-
-  Future<void> cargarFavoritos() async {
-    final idsFavoritos = await FavoritosService.obtenerFavoritos();
-
-    if (!mounted) return;
-
-    setState(() {
-      for (final producto in productos) {
-        producto.favorito = idsFavoritos.contains(producto.id);
-      }
-    });
-  }
-
-  Future<void> cambiarFavorito(int index) async {
-    setState(() {
-      productos[index].favorito = !productos[index].favorito;
-    });
-
-    final idsFavoritos = productos
-        .where((producto) => producto.favorito)
-        .map((producto) => producto.id)
-        .toList();
-
-    await FavoritosService.guardarFavoritos(idsFavoritos);
-
-    if (!mounted) return;
-
-    final producto = productos[index];
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          producto.favorito
-              ? '${producto.nombre} agregado a favoritos'
-              : '${producto.nombre} eliminado de favoritos',
-        ),
-        duration: const Duration(seconds: 2),
-      ),
-    );
-  }
-
   void abrirDetalle(Producto producto) {
     Navigator.push(
       context,
@@ -78,15 +33,11 @@ class _CatalogoState extends State<Catalogo> {
     );
   }
 
-  Future<void> abrirFavoritos() async {
-    await Navigator.push(
+  void abrirFavoritos() {
+    Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const Favoritos()),
     );
-
-    if (!mounted) return;
-
-    await cargarFavoritos();
   }
 
   @override
@@ -214,20 +165,8 @@ class _CatalogoState extends State<Catalogo> {
                                       producto.categoria,
                                       style: const TextStyle(fontSize: 12),
                                     ),
-                                    IconButton(
-                                      onPressed: () {
-                                        final indiceReal = productos.indexOf(
-                                          producto,
-                                        );
 
-                                        cambiarFavorito(indiceReal);
-                                      },
-                                      icon: Icon(
-                                        producto.favorito
-                                            ? Icons.favorite
-                                            : Icons.favorite_border,
-                                      ),
-                                    ),
+                                    BotonFavorito(producto: producto),
                                   ],
                                 ),
                               ],
