@@ -1,72 +1,64 @@
-# mi_tiendita
+# 🐾 Mi Tiendita
 
-Aplicación móvil desarrollada en Flutter como parte de las actividades integradoras.
+**Autor: Freddy Paredes**
 
-Mi Tiendita es una aplicación de catálogo de productos que permite visualizar productos, consultar su información, marcar productos como favoritos y conservar los favoritos guardados en el dispositivo.
+Aplicación móvil desarrollada en Flutter como continuación de las actividades integradoras anteriores.
 
----
-
-# Actividad Integradora 2
-
-## Continuidad de la Actividad Integradora 1
-
-La presente aplicación corresponde a una continuación y evolución de la
-aplicación desarrollada en la **Actividad Integradora 1**, cuyo tema
-principal fue **Mi Mascota**.
-
-En la primera actividad se desarrolló una aplicación enfocada en la
-presentación y organización de información relacionada con una mascota.
-
-Para la Actividad Integradora 2 se decidió mantener la misma temática de
-mascotas, pero ampliar el concepto de la aplicación y convertirla en una
-tienda virtual denominada **Mi Tiendita**, orientada a la venta de productos
-para mascotas.
-
-De esta manera, la segunda actividad mantiene relación directa con el
-trabajo realizado anteriormente y permite incorporar nuevas funcionalidades
-y conceptos aprendidos en Flutter, sin perder la temática original.
+El proyecto inició con la aplicación **Mi Mascota** y evolucionó hacia **Mi Tiendita**, una aplicación orientada a la visualización y gestión de productos para mascotas.
 
 ---
 
-## Descripción de la aplicación
+# 📱 Proyecto 3 – Gestión de estado con Provider
 
-**Mi Tiendita** es una aplicación móvil desarrollada en Flutter que simula
-una tienda virtual de productos para mascotas.
+En esta tercera actividad se incorporó el manejo de estado mediante el patrón **Provider**, manteniendo y mejorando las funcionalidades desarrolladas anteriormente.
 
-La aplicación permite al usuario consultar un catálogo de productos,
-filtrarlos por categorías, visualizar el detalle de cada producto, agregar
-productos a favoritos y conservar los favoritos almacenados localmente en
-el dispositivo.
-
-La aplicación fue desarrollada como una evolución de **Mi Mascota**, proyecto
-realizado durante la Actividad Integradora 1.
+La aplicación permite visualizar productos, consultar su detalle, seleccionar categorías y administrar productos favoritos.
 
 ---
 
-## Evolución de la aplicación
+## 🎯 Objetivo
 
-### Actividad Integradora 1 — Mi Mascota
+Aplicar los conocimientos de Flutter relacionados con:
 
-La primera actividad estuvo enfocada en la temática de una mascota y permitió
-desarrollar la estructura inicial de la aplicación y familiarizarse con
-Flutter y sus principales widgets.
+- Manejo de estado mediante `Provider`.
+- Uso de `ChangeNotifier`.
+- Actualización reactiva de la interfaz.
+- Creación de widgets reutilizables.
+- Organización del proyecto en diferentes archivos y carpetas.
+- Navegación entre pantallas.
+- Persistencia de información utilizando `SharedPreferences`.
+- Control de versiones mediante Git y GitHub.
 
-### Actividad Integradora 2 — Mi Tiendita
+---
 
-En esta segunda actividad se tomó como base la temática de mascotas y se
-amplió la aplicación para convertirla en una tienda virtual.
+# ✨ Funcionalidades
 
-Entre las principales mejoras incorporadas se encuentran:
+La aplicación cuenta con las siguientes funcionalidades:
 
-- Catálogo de productos para mascotas.
-- Categorías de productos.
-- Navegación entre diferentes pantallas.
-- Detalle de productos.
-- Sistema de favoritos.
-- Persistencia de favoritos mediante `shared_preferences`.
-- Cambio de cantidad de productos.
-- Mensajes mediante `SnackBar`.
-- Uso de `setState()` para actualizar información en pantalla.
-- Nuevo logotipo relacionado con mascotas.
-- Ícono personalizado de la aplicación.
-- Personalización visual de la interfaz.
+- 🏠 Pantalla de inicio.
+- 🛍️ Catálogo de productos.
+- 🐶🐱 Filtrado de productos por categoría.
+- 🔎 Visualización del detalle de cada producto.
+- ❤️ Agregar productos a favoritos.
+- 💔 Eliminar productos de favoritos.
+- 📋 Visualización de la lista de favoritos.
+- 💾 Persistencia de favoritos mediante `SharedPreferences`.
+- 🔄 Actualización automática de favoritos utilizando `Provider`.
+- 📱 Navegación entre diferentes pantallas.
+- 🖼️ Visualización de imágenes de los productos.
+- 🔔 Mensajes mediante `SnackBar`.
+- 🔢 Cambio de cantidad de productos.
+- 🐾 Logotipo relacionado con mascotas.
+- 📱 Ícono personalizado de la aplicación.
+- 🎨 Personalización visual de la interfaz.
+
+---
+
+# 🧩 Manejo de estado con Provider
+
+Para esta actividad se incorporó el paquete **Provider** para administrar el estado de los productos favoritos.
+
+El estado principal se encuentra en:
+
+```text
+lib/providers/favoritos_provider.dart
