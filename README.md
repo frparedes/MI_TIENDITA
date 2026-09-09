@@ -53,6 +53,32 @@ La aplicación cuenta con las siguientes funcionalidades:
 - 🎨 Personalización visual de la interfaz.
 
 ---
+# 📸 Capturas de pantalla
+
+A continuación se presentan las principales pantallas de la aplicación.
+
+## 🏠 Pantalla de inicio
+
+![Pantalla de inicio](lib/capturas/INICIO.png)
+
+---
+
+## 🛍️ Catálogo de productos
+
+![Catálogo de productos](lib/capturas/CATALOGO.png)
+
+---
+
+## 🔎 Detalle del producto
+
+![Detalle del producto](lib/capturas/DETALLE_PRODUCTO.png)
+
+---
+
+## ❤️ Mis favoritos
+
+![Mis favoritos](lib/capturas/FAVORITOS.png)
+
 
 # 🧩 Manejo de estado con Provider
 
@@ -216,31 +242,6 @@ Interfaz visual adaptada a la aplicación.
 Uso de imágenes e iconos.
 Actualización dinámica de la información.
 
-# 📸 Capturas de pantalla
-
-A continuación se presentan las principales pantallas de la aplicación.
-
-## 🏠 Pantalla de inicio
-
-![Pantalla de inicio](lib/capturas/INICIO.png)
-
----
-
-## 🛍️ Catálogo de productos
-
-![Catálogo de productos](lib/capturas/CATALOGO.png)
-
----
-
-## 🔎 Detalle del producto
-
-![Detalle del producto](lib/capturas/DETALLE_PRODUCTO.png)
-
----
-
-## ❤️ Mis favoritos
-
-![Mis favoritos](lib/capturas/FAVORITOS.png)
 
 👨‍💻 Autor
 
