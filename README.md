@@ -171,17 +171,32 @@ flutter run
 
 También es posible ejecutar el proyecto desde Visual Studio Code seleccionando un dispositivo o emulador compatible.
 
-📸 Capturas de pantalla
+# 📸 Capturas de pantalla
 
 A continuación se presentan las principales pantallas de la aplicación.
 
-🏠 Pantalla de inicio
+## 🏠 Pantalla de inicio
 
-🛍️ Catálogo de productos
+![Pantalla de inicio](lib/capturas/INICIO.png)
 
-🔎 Detalle del producto
+---
 
-❤️ Mis favoritos
+## 🛍️ Catálogo de productos
+
+![Catálogo de productos](lib/capturas/CATALOGO.png)
+
+---
+
+## 🔎 Detalle del producto
+
+![Detalle del producto](lib/capturas/DETALLE_PRODUCTO.png)
+
+---
+
+## ❤️ Mis favoritos
+
+![Mis favoritos](lib/capturas/FAVORITOS.png)
+
 
 🔄 Evidencia del uso de Provider
 
